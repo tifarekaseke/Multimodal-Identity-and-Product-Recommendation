@@ -1,0 +1,111 @@
+{
+  "social_original_rows": 155,
+  "social_duplicates_removed": 5,
+  "transaction_original_rows": 150,
+  "transaction_duplicates_removed": 0,
+  "social_unique_customers": 84,
+  "transaction_unique_customers": 75,
+  "social_aggregate_rows": 84,
+  "merged_rows": 150,
+  "matched_transaction_rows": 117,
+  "unmatched_transaction_rows": 33,
+  "model_rows": 117,
+  "model_unique_customers": 61,
+  "nulls_social": {
+    "customer_id_new": 0,
+    "social_media_platform": 0,
+    "engagement_score": 0,
+    "purchase_interest_score": 0,
+    "review_sentiment": 0
+  },
+  "nulls_transactions": {
+    "customer_id_legacy": 0,
+    "transaction_id": 0,
+    "purchase_amount": 0,
+    "purchase_date": 0,
+    "product_category": 0,
+    "customer_rating": 10
+  },
+  "target_distribution_model": {
+    "Sports": 28,
+    "Electronics": 27,
+    "Clothing": 22,
+    "Groceries": 20,
+    "Books": 20
+  },
+  "numeric_summary": {
+    "engagement_mean": {
+      "count": 117.0,
+      "mean": 74.15,
+      "std": 12.67,
+      "min": 50.0,
+      "25%": 66.5,
+      "50%": 77.0,
+      "75%": 83.0,
+      "max": 99.0
+    },
+    "interest_mean": {
+      "count": 117.0,
+      "mean": 3.08,
+      "std": 1.04,
+      "min": 1.0,
+      "25%": 2.67,
+      "50%": 3.13,
+      "75%": 3.7,
+      "max": 4.8
+    },
+    "social_activity_count": {
+      "count": 117.0,
+      "mean": 1.82,
+      "std": 0.9,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 2.0,
+      "max": 4.0
+    },
+    "purchase_amount": {
+      "count": 117.0,
+      "mean": 287.91,
+      "std": 120.08,
+      "min": 62.0,
+      "25%": 183.0,
+      "50%": 280.0,
+      "75%": 397.0,
+      "max": 495.0
+    },
+    "customer_rating": {
+      "count": 109.0,
+      "mean": 3.12,
+      "std": 1.24,
+      "min": 1.0,
+      "25%": 2.1,
+      "50%": 3.3,
+      "75%": 4.2,
+      "max": 5.0
+    }
+  },
+  "merge_indicator_counts": {
+    "both": 117,
+    "left_only": 33,
+    "right_only": 0
+  },
+  "feature_columns": [
+    "engagement_mean",
+    "interest_mean",
+    "social_activity_count",
+    "distinct_platforms",
+    "primary_platform",
+    "primary_sentiment"
+  ],
+  "excluded_to_avoid_leakage": [
+    "customer_id",
+    "customer_id_legacy",
+    "customer_id_new",
+    "transaction_id",
+    "purchase_amount",
+    "customer_rating",
+    "purchase_date",
+    "purchase_month"
+  ]
+}
