@@ -1,0 +1,14 @@
+# Python environment and build artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.env
+.DS_Store
+# Private multimodal source data, to be handled by group under consent
+data/faces/
+data/audio/
+*.wav
+*.mp3
