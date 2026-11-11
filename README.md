@@ -17,7 +17,7 @@ The `images/` folder is not on GitHub. It holds our face photos, so we keep it p
 
 ### Photos
 
-Each member has 3 photos: neutral, smiling and surprised. Members are colombe, nelly, sahra and tifare, so there are 12 photos. Each file is named `name_expression.jpeg`, for example `sahra_smiling.jpeg`. They go in `images/raw/`.
+Each member has 3 photos: neutral, smiling and surprised. Members are colombe, nelly, sahra and tifare, so there are 12 photos. Each file is named `name_expression.jpg`, for example `sahra_smiling.jpg`. They go in `images/raw/`.
 
 ### What the code does
 
