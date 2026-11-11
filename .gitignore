@@ -220,3 +220,4 @@ __marimo__/
 .streamlit/secrets.toml
 images/
 results/sample_faces.png
+results/augmentation_example.png
