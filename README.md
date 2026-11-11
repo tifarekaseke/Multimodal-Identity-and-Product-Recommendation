@@ -17,11 +17,11 @@ The `images/` folder is not on GitHub. It holds our face photos, so we keep it p
 
 ### Photos
 
-Each member has 3 photos: neutral, smiling and surprised. Members are colombe, nelly, sahra and tifare, so there are 12 photos. Each file is named `name_expression.jpg`, for example `sahra_smiling.jpg`. They go in `images/raw/`.
+Each member has 3 photos: neutral, smiling and surprised. Members are colombe, nelly, sahra and tifare, so there are 12 photos. Each file is named `name_expression.jpeg`, for example `sahra_smiling.jpeg`. They go in `images/raw/`.
 
 ### What the code does
 
-1. Resizes every photo to 224 x 224 and saves it as a .jpg.
+1. Resizes every photo to 224 x 224 and saves it as a .jpeg.
 2. Makes 3 changed copies of each photo: rotated, flipped and grayscale.
 3. Takes features from every photo: a 32-bin brightness histogram, the mean brightness and the standard deviation.
 4. Saves all of this in `data/image_features.csv`. There are 48 rows, which is 12 photos with 4 versions each (the original and 3 copies).
