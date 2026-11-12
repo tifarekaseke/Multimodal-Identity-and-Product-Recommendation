@@ -218,6 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Facial recognition images and generated samples
 images/
 results/sample_faces.png
 results/augmentation_example.png
+
+# Tifare's individual report
+/Formative2_Tifare/report/
+
