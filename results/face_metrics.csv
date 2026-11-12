@@ -1,0 +1,2 @@
+accuracy,f1_score,loss,threshold,false_reject_rate,false_accept_rate
+1.0,1.0,0.18415940341400994,0.7,0.08333333333333337,0.0
