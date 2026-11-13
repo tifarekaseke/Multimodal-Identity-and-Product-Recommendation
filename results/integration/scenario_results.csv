@@ -1,0 +1,5 @@
+scenario,allowed,reason,face,face_confidence,voice_predicted,voice_score,voice_approved,customer_id,predicted_category
+Authorized transaction for colombe,True,Face and voice both match colombe.,colombe,0.995,colombe,0.985,True,178,Sports
+Unauthorized face,False,"The face was not recognized, so the product model stays closed.",,0.555,,,,,
+Known face (colombe) with another member's voice (nelly),False,The voice does not match colombe. Closest enrolled speaker: nelly. Score for colombe: 0.009.,colombe,0.995,nelly,0.009,False,,
+Known face (colombe) with an unknown voice,False,The voice does not match colombe. Closest enrolled speaker: sahra. Score for colombe: 0.021.,colombe,0.995,sahra,0.021,False,,

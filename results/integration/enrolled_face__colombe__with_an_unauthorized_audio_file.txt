@@ -1,0 +1,26 @@
+Face gate: RandomForestClassifier, accept at or above 0.700
+Voice gate: LogisticRegression, accept at or above 0.600
+Product model: LogisticRegression
+Rule: show a product only when the face and the voice are the same enrolled person.
+
+Enrolled face (colombe) with an unauthorized audio file
+-------------------------------------------------------
+
+Step 1 of 3. Face recognition
+Input: enrolled original photo features for colombe (neutral)
+Nearest enrolled person: colombe
+Confidence: 0.995
+Threshold: 0.700
+Decision: PASS. colombe may request a product prediction.
+
+Step 2 of 3. Voice verification
+Input: results\integration\unauthorized_voice.wav
+Voice is checked as: colombe
+Predicted speaker: tifare
+Score for colombe: 0.001
+Threshold: 0.600
+Decision: FAIL. The voice does not match the recognized face.
+
+ACCESS DENIED
+The voice does not match colombe. Closest enrolled speaker: tifare. Score for colombe: 0.001.
+Product prediction was not run.

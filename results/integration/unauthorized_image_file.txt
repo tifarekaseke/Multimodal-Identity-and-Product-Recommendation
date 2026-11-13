@@ -1,0 +1,18 @@
+Face gate: RandomForestClassifier, accept at or above 0.700
+Voice gate: LogisticRegression, accept at or above 0.600
+Product model: LogisticRegression
+Rule: show a product only when the face and the voice are the same enrolled person.
+
+Unauthorized image file
+-----------------------
+
+Step 1 of 3. Face recognition
+Input: results\integration\unauthorized_face.jpg
+Nearest enrolled person: colombe
+Confidence: 0.640
+Threshold: 0.700
+Decision: FAIL. This face is not an enrolled person.
+
+ACCESS DENIED
+The face was not recognized, so the product model stays closed.
+Voice verification and product prediction were not run.
