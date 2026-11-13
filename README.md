@@ -56,22 +56,6 @@ python src/system_cli.py --scenario live-unauthorized --save
 
 That file check needs `opencv-python`. The audio file also needs `librosa` (`pip install librosa`). If `ffmpeg` is on PATH, the audio check uses `src/voice_verification.py` directly.
 
-### Demo recording, first cut
-
-Record the terminal while running `python src/system_cli.py --scenario all`. Say, in order:
-
-1. The face gate names the enrolled person and opens the product step.
-2. The voice gate accepts only that same person.
-3. The category appears only after both passes. Mention that customer 178 is scored from the social profile.
-4. Replay the three denials and point out that no category is printed.
-
-Then run one live photo and one live recording if the private files are on the machine, plus `--scenario live-unauthorized`.
-
-Saved model files used by this app:
-
-- `models/face_model.joblib`
-- `models/voice_model.pkl`
-- `Formative2_Tifare/models/product_recommender.joblib`
 
 ## Image processing and face recognition
 
