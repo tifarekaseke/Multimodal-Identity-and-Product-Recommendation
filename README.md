@@ -1,5 +1,78 @@
 # Multimodal Identity and Product Recommendation
 
+## System integration
+
+The command-line app chains the three saved models. A product category is shown only when both of these are true:
+
+1. The face model recognizes an enrolled person (colombe, nelly, sahra, or tifare).
+2. The voice model confirms that the same person spoke.
+
+A recognized face plus another member's voice is denied. An unrecognized face stops the flow before the voice check and before the product model. The product model reads the customer's social profile only. It does not use purchase amount, rating, or a product the customer already bought.
+
+Customer `A178` is the demo visitor. That profile is in the social data and has no matched transaction, so the prediction is for a visit rather than a purchase already on file. `A178` and `178` are the same customer.
+
+### Run the scripted checks
+
+From the repository root:
+
+```
+pip install -r requirements.txt
+python src/system_cli.py --scenario all --save
+python -m unittest discover -s tests -v
+```
+
+`--scenario all` runs four checks:
+
+- authorized: colombe's enrolled face and colombe's enrolled voice, then a prediction for customer 178
+- unknown face: a synthetic flat histogram, denied before voice or product
+- wrong voice: colombe's face with nelly's voice, denied before product
+- unknown voice: colombe's face with a synthetic voice, denied before product
+
+`--save` writes the terminal text, a screenshot of each check, and `scenario_results.csv` to `results/integration/`.
+
+Other checks:
+
+```
+python src/system_cli.py --scenario authorized --member nelly --customer-id A178
+python src/system_cli.py --scenario wrong-voice --member sahra --voice-member tifare
+python src/system_cli.py
+```
+
+The last command prompts for an image path and a voice path. Press Enter on both to replay colombe's enrolled feature rows.
+
+### Live image and audio files
+
+Raw face photos and voice recordings are not in this repository. When the private files are available:
+
+```
+python src/system_cli.py --image images/raw/colombe_neutral.jpeg --audio audio/raw/colombe_yes_approve.wav --customer-id A178
+```
+
+The voice file is always checked as the person named by the face gate. A live unauthorized attempt uses a generated noise image and a generated noise recording:
+
+```
+python src/system_cli.py --scenario live-unauthorized --save
+```
+
+That file check needs `opencv-python`. The audio file also needs `librosa` (`pip install librosa`). If `ffmpeg` is on PATH, the audio check uses `src/voice_verification.py` directly.
+
+### Demo recording, first cut
+
+Record the terminal while running `python src/system_cli.py --scenario all`. Say, in order:
+
+1. The face gate names the enrolled person and opens the product step.
+2. The voice gate accepts only that same person.
+3. The category appears only after both passes. Mention that customer 178 is scored from the social profile.
+4. Replay the three denials and point out that no category is printed.
+
+Then run one live photo and one live recording if the private files are on the machine, plus `--scenario live-unauthorized`.
+
+Saved model files used by this app:
+
+- `models/face_model.joblib`
+- `models/voice_model.pkl`
+- `Formative2_Tifare/models/product_recommender.joblib`
+
 ## Image processing and face recognition
 
 This part collects face photos, prepares them, and trains a model that recognises each team member.
